@@ -48,11 +48,40 @@ Model Waveform
 <img width="703" height="679" alt="image" src="https://github.com/user-attachments/assets/e7c7c7f8-ccf2-41ac-b1f3-325989941a6f" />
 
 Program
-
+```
+Ac=13.6;
+Am=6.6;
+fc=4260;
+fm=460;
+fs=40700;
+t=0:1/fs:2/fm;
+Wm=2*3.14*fm;
+Wc=2*3.14*fc;
+Em=Am*sin(2*3.14*fm*t);
+subplot(3,1,1);
+plot(t,Em);
+xlabel("Time(s)");
+ylabel("Amplitude");
+title("Message Signal m(t)");
+Ec=Ac*sin(2*3.14*fc*t);
+subplot(3,1,2);
+plot(t,Ec);
+xlabel("Time(s)");
+ylabel("Amplitude");
+title("Carrier Signal c(t)");
+Edsbsc=((Am/2)*cos((Wc-Wm)*t))-((Am/2)*cos((Wc+Wm)*t));
+subplot(3,1,3);
+plot(t,Edsbsc);
+xlabel("Time(s)");
+ylabel("Amplitude");
+title("DSB-SC Modulated Signal");
+```
 Output Graph
+<img width="471" height="443" alt="Screenshot 2025-11-16 183003" src="https://github.com/user-attachments/assets/1357174e-b075-48bb-9853-bc3e7581b974" />
 
 
 Tablular Column
+![WhatsApp Image 2025-11-16 at 6 35 44 PM](https://github.com/user-attachments/assets/0b00979f-8242-4dea-9c0e-709185d43413)
 
 
 Result
